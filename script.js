@@ -22,27 +22,27 @@
 
 
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzwJ2yH-eWodGKp7Kzt1Huf95-QFw4X1yskvWoyP-DyuEWXkq40JkVZ3yjIABLXhThsBA/exec";
+// const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzwJ2yH-eWodGKp7Kzt1Huf95-QFw4X1yskvWoyP-DyuEWXkq40JkVZ3yjIABLXhThsBA/exec";
 
-document.getElementById("submit-form").addEventListener("submit", async (e) => {
-    e.preventDefault();
+// document.getElementById("submit-form").addEventListener("submit", async (e) => {
+//     e.preventDefault();
 
-    try {
-        const response = await fetch(SCRIPT_URL, {
-            method: "POST",
-            body: new FormData(e.target)
-        });
+//     try {
+//         const response = await fetch(SCRIPT_URL, {
+//             method: "POST",
+//             body: new FormData(e.target)
+//         });
 
-        const result = await response.text();
+//         const result = await response.text();
 
-        alert("Form submitted successfully!");
+//         alert("Form submitted successfully!");
 
-        e.target.reset();
+//         e.target.reset();
 
-        console.log(result);
+//         console.log(result);
 
-    } catch (err) {
-        console.error(err);
-        alert("Submission failed.");
-    }
-});
+//     } catch (err) {
+//         console.error(err);
+//         alert("Submission failed.");
+//     }
+// });
