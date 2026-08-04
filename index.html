@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-4">
+
+    <div class="w-full max-w-2xl">
+
+        <header class="w-full bg-white shadow-md rounded-2xl mb-6">
+
+            <div class="max-w-5xl mx-auto px-6 py-6 flex justify-center">
+
+                <img  src="https://www.kmctctm.org/assets/images/KMCT-CTM-Vadakara.png" alt="KMCT College Logo" class="w-full max-w-4xl h-auto object-contain">
+
+            </div>
+
+        </header>
+
+
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+            <!-- Header -->
+            <div class="bg-blue-600 px-8 py-6 text-white">
+                <h1 class="text-3xl font-bold">Student Registration</h1>
+                <p class="text-blue-100 mt-2">
+                    Please fill in your details to register.
+                </p>
+            </div>
+
+            <!-- Form -->
+            <form id="submit-form" method="post" class="p-8 space-y-6">
+
+                <!-- Student Name -->
+                <div>
+                    <label for="student_name" class="block text-sm font-semibold text-gray-700 mb-2">
+                        Student Name
+                    </label>
+
+                    <input type="text" id="student_name" name="student_name" autocomplete="name"
+                        class="w-full rounded-lg border border-gray-300 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none">
+                </div>
+
+                <!-- Department -->
+                <div>
+                    <label for="department" class="block text-sm font-semibold text-gray-700 mb-2">
+                        Department
+                    </label>
+
+                    <select id="department" name="department"
+                        class="w-full rounded-lg border border-gray-300 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none">
+
+                        <option value="">Select Department</option>
+                        <option>BTech CSE</option>
+                        <option>BTech CS BS</option>
+                        <option>BTech AI DS</option>
+                        <option>BTech ECE</option>
+                        <option>BCA</option>
+                        <option>BBA</option>
+                        <option>MBA</option>
+
+                    </select>
+                </div>
+
+                <!-- Semester -->
+                <div>
+                    <label for="semester" class="block text-sm font-semibold text-gray-700 mb-2">
+                        Semester
+                    </label>
+
+                    <select id="semester" name="semester"
+                        class="w-full rounded-lg border border-gray-300 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none">
+
+                        <option value="">Select Semester</option>
+                        <option>S1</option>
+                        <option>S3</option>
+
+                    </select>
+                </div>
+
+                <!-- Mobile -->
+                <div>
+                    <label for="mobile" class="block text-sm font-semibold text-gray-700 mb-2">
+                        Mobile Number
+                    </label>
+
+                    <input type="tel" id="mobile" name="mobile" inputmode="numeric" maxlength="10"
+                        placeholder="10-digit Mobile Number" autocomplete="tel"
+                        class="w-full rounded-lg border border-gray-300 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none">
+                </div>
+
+                <!-- Email -->
+                <div>
+                    <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
+                        Email ID
+                    </label>
+
+                    <input type="text" id="email" name="email" autocomplete="email" placeholder="example@email.com"
+                        class="w-full rounded-lg border border-gray-300 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none">
+                </div>
+
+                <!-- Parent Name -->
+                <div>
+                    <label for="parent_name" class="block text-sm font-semibold text-gray-700 mb-2">
+                        Parent Name
+                    </label>
+
+                    <input type="text" id="parent_name" name="parent_name" autocomplete="name"
+                        class="w-full rounded-lg border border-gray-300 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none">
+                </div>
+
+                <!-- Parent Mobile -->
+                <div>
+                    <label for="parent_mobile" class="block text-sm font-semibold text-gray-700 mb-2">
+                        Parent Mobile Number
+                    </label>
+
+                    <input type="tel" id="parent_mobile" name="parent_mobile" inputmode="numeric" maxlength="10"
+                        placeholder="10-digit Mobile Number" autocomplete="tel"
+                        class="w-full rounded-lg border border-gray-300 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none">
+                </div>
+
+                <!-- Bus Facility -->
+                <div>
+                    <label for="bus_needed" class="block text-sm font-semibold text-gray-700 mb-2">
+                        Bus Facility Required?
+                    </label>
+
+                    <select id="bus_needed" name="bus_needed"
+                        class="w-full rounded-lg border border-gray-300 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none">
+
+                        <option value="">Select</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+
+                    </select>
+                </div>
+
+                <!-- Boarding Point -->
+                <div id="boarding_div" class="hidden">
+                    <label for="boarding_point" class="block text-sm font-semibold text-gray-700 mb-2">
+                        Boarding Point
+                    </label>
+
+                    <input type="text" id="boarding_point" name="boarding_point"
+                        class="w-full rounded-lg border border-gray-300 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none">
+                </div>
+
+                <!-- Hostel -->
+                <div>
+                    <label for="hostel_needed" class="block text-sm font-semibold text-gray-700 mb-2">
+                        Hostel Facility Required?
+                    </label>
+
+                    <select id="hostel_needed" name="hostel_needed"
+                        class="w-full rounded-lg border border-gray-300 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none">
+
+                        <option value="">Select</option>
+                        <option>Yes</option>
+                        <option>No</option>
+
+                    </select>
+                </div>
+
+                <!-- Validation / Success Message -->
+                <div id="error-message"
+                    class="hidden rounded-lg border px-4 py-3 text-sm font-medium transition-all duration-300">
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" id="submit-btn"
+                    class="w-full rounded-lg bg-blue-600 py-3 font-semibold text-white transition duration-200 hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60">
+
+                    Submit
+
+                </button>
+
+            </form>
+
+        </div>
+
+        <footer class="w-full max-w-5xl mx-auto mt-10">
+
+            <div class="bg-white rounded-2xl shadow-lg px-6 py-6 text-center">
+
+                <p class="text-gray-700 font-semibold">
+                    KMCT College of Engineering for Emerging Technology and Management
+                </p>
+
+                <p class="text-gray-500 mt-2">
+                    Vadakara, Kerala
+                </p>
+
+                <div class="border-t mt-5 pt-4">
+
+                    <p class="text-sm text-gray-500">
+                        © 2026 KMCT College of Engineering for Emerging Technology and Management.
+                        All Rights Reserved.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <script>
+
+        const form = document.getElementById("submit-form");
+        const submitBtn = document.getElementById("submit-btn");
+
+        const busSelect = document.getElementById("bus_needed");
+        const boardingDiv = document.getElementById("boarding_div");
+        const boardingInput = document.getElementById("boarding_point");
+
+        const messageBox = document.getElementById("error-message");
+
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzSBzwdHZLqzJnj11dOPUidrZ3PhYVLgpkBUdubP4XiBCfdfVeFcnuCZqN379JE8XreTA/exec";
+
+
+        // Bus Facility
+        busSelect.addEventListener("change", () => {
+
+            if (busSelect.value === "Yes") {
+                boardingDiv.classList.remove("hidden");
+            } else {
+                boardingDiv.classList.add("hidden");
+                boardingInput.value = "";
+            }
+
+        });
+
+        // Message Functions
+        function showMessage(message, type = "error") {
+
+            messageBox.textContent = message;
+
+            messageBox.className =
+                "rounded-lg border px-4 py-3 text-sm font-medium";
+
+            if (type === "success") {
+
+                messageBox.classList.add(
+                    "bg-green-100",
+                    "border-green-300",
+                    "text-green-700"
+                );
+
+            } else {
+
+                messageBox.classList.add(
+                    "bg-red-100",
+                    "border-red-300",
+                    "text-red-700"
+                );
+
+            }
+
+            messageBox.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        }
+
+        function hideMessage() {
+
+            messageBox.className =
+                "hidden rounded-lg border px-4 py-3 text-sm font-medium";
+
+            messageBox.textContent = "";
+
+        }
+
+        // Hide message while typing
+        document.querySelectorAll("input, select").forEach(field => {
+
+            field.addEventListener("input", hideMessage);
+            field.addEventListener("change", hideMessage);
+
+        });
+
+        // Validation
+        function validateForm() {
+
+            hideMessage();
+
+            const student = form.student_name.value.trim();
+            const dept = form.department.value;
+            const semester = form.semester.value;
+            const mobile = form.mobile.value.trim();
+            const email = form.email.value.trim();
+            const parent = form.parent_name.value.trim();
+            const parentMobile = form.parent_mobile.value.trim();
+            const bus = form.bus_needed.value;
+            const boarding = form.boarding_point.value.trim();
+            const hostel = form.hostel_needed.value;
+
+            if (!student) {
+                showMessage("Please enter Student Name.");
+                return false;
+            }
+
+            if (!dept) {
+                showMessage("Please select Department.");
+                return false;
+            }
+
+            if (!semester) {
+                showMessage("Please select Semester.");
+                return false;
+            }
+
+            if (!mobile) {
+                showMessage("Please enter Mobile Number.");
+                return false;
+            }
+
+            if (!/^[6-9][0-9]{9}$/.test(mobile)) {
+                showMessage("Enter a valid Mobile number with exactly 10 digits.");
+                return false;
+            }
+
+            if (!email) {
+                showMessage("Please enter Email ID.");
+                return false;
+            }
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                showMessage("Please enter a valid Email ID.");
+                return false;
+            }
+
+            if (!parent) {
+                showMessage("Please enter Parent Name.");
+                return false;
+            }
+
+            if (!parentMobile) {
+                showMessage("Please enter Parent Mobile Number.");
+                return false;
+            }
+
+            if (!/^[6-9][0-9]{9}$/.test(parentMobile)) {
+                showMessage("Enter a valid Parent Mobile number with exactly 10 digits.");
+                return false;
+            }
+
+            if (!bus) {
+                showMessage("Please select Bus Facility.");
+                return false;
+            }
+
+            if (bus === "Yes" && !boarding) {
+                showMessage("Please enter Boarding Point.");
+                return false;
+            }
+
+            if (!hostel) {
+                showMessage("Please select Hostel Facility.");
+                return false;
+            }
+
+            return true;
+
+        }
+
+        // Submit Form
+        form.addEventListener("submit", async (e) => {
+
+            e.preventDefault();
+
+            if (!validateForm()) {
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = "Submitting...";
+
+            hideMessage();
+
+            try {
+
+                const response = await fetch(SCRIPT_URL, {
+                    method: "POST",
+                    body: new FormData(form)
+                });
+
+                if (!response.ok) {
+                    throw new Error("Network Error");
+                }
+
+                const result = await response.text();
+
+                if (result.trim() !== "Success") {
+                    throw new Error(result);
+                }
+
+                showMessage(
+                    "Student details submitted successfully.",
+                    "success"
+                );
+
+                form.reset();
+
+                boardingDiv.classList.add("hidden");
+                boardingInput.value = "";
+
+            } catch (err) {
+
+                console.error(err);
+
+                showMessage(
+                    "Submission failed. Please try again.",
+                    "error"
+                );
+
+            } finally {
+
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Submit";
+
+            }
+
+        });
+
+    </script>
+</body>
+
+</html>
